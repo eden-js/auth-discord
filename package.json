@@ -1,0 +1,23 @@
+{
+  "name": "@edenjs/auth-discord",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eden-js/auth-discord.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eden-js/auth-discord/issues"
+  },
+  "homepage": "https://github.com/eden-js/auth-discord#readme",
+  "dependencies": {
+    "passport": "^0.4.0",
+    "passport-discord": "^0.1.3"
+  }
+}
