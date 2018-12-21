@@ -19,11 +19,10 @@ const image = model('image');
  * @extends AuthController
  */
 class DiscordAuthController extends AuthController {
-
   /**
    * Construct Discord Auth Controller class
    */
-  constructor () {
+  constructor() {
     // Run super
     super();
 
@@ -39,14 +38,14 @@ class DiscordAuthController extends AuthController {
    *
    * @private
    */
-  _build () {
+  _build() {
     // Add Discord strategy to passport
     passport.use(new Strategy({
-      'clientID'          : config.get('discord.oauth.clientID'),
-      'clientSecret'      : config.get('discord.oauth.clientSecret'),
-      'callbackURL'       : `https://${config.get('domain')}/auth/discord`,
-      'scope'             : config.get('discord.oauth.scope'),
-      'passReqToCallback' : true
+      clientID          : config.get('discord.oauth.clientID'),
+      clientSecret      : config.get('discord.oauth.clientSecret'),
+      callbackURL       : `https://${config.get('domain')}/auth/discord`,
+      scope             : config.get('discord.oauth.scope'),
+      passReqToCallback : true,
     }, async (req, identifier, refreshToken, profile, next) => {
       // Run super authenticate
       return await super._authenticate('discord', req, identifier, refreshToken, profile, next);
@@ -102,7 +101,6 @@ class DiscordAuthController extends AuthController {
       }
     });
   }
-
 }
 
 /**
