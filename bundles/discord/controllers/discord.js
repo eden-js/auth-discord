@@ -2,7 +2,7 @@
 const passport = require('passport');
 
 // Require class dependencies
-const Strategy = require('passport-discord').Strategy;
+const { Strategy } = require('passport-discord');
 
 // Require local dependencies
 const config = require('config');
@@ -11,7 +11,7 @@ const config = require('config');
 const AuthController = require('auth/controllers/auth');
 
 // Require models
-const image = model('image');
+const Image = model('image');
 
 /**
  * Create Discord Auth Controller class
@@ -82,7 +82,7 @@ class DiscordAuthController extends AuthController {
         // Try/Catch
         try {
           // Create new avatar image
-          avatar = new image();
+          avatar = new Image();
 
           // Check avatar
           if (data.auth.get('profile.avatar')) {
@@ -108,4 +108,4 @@ class DiscordAuthController extends AuthController {
  *
  * @type {DiscordAuthController}
  */
-exports = module.exports = DiscordAuthController;
+module.exports = DiscordAuthController;
